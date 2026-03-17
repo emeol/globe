@@ -1,6 +1,14 @@
 import { Link } from 'react-router-dom'
+import { useHouseContext } from '../context/houseContext.jsx'
 
-const HouseCard = ({ house }) => {
+const HouseCard = ({ houseId }) => {
+  const { houses } = useHouseContext()
+  const house = houses.find((item) => item.id === houseId)
+
+  if (!house) {
+    return null
+  }
+
   return (
     <Link to={`/house/${house.id}`} className="block bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
       <img src={`/images/${house.image}`} alt={house.name} className="w-full h-48 object-cover" />

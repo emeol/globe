@@ -3,19 +3,22 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
+import { HouseProvider } from './features/houses/context/houseContext.jsx'
 import About from './pages/About.jsx'
 import House from './pages/House.jsx'
 import NotFound from './pages/NotFound.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/house/:id" element={<House />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <HouseProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/house/:id" element={<House />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </HouseProvider>
   </StrictMode>,
 )

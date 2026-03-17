@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import FeaturedHouse from './features/houses/components/FeaturedHouse';
 import HouseFilter from './features/houses/components/HouseFilter';
-import { useHouse } from './features/houses/hooks/useHouse';
+import { useHouseContext } from './features/houses/context/houseContext.jsx';
 
 function App() {
 
-  const { houses, loading, error } = useHouse();
+  const { loading, error } = useHouseContext();
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -22,13 +22,7 @@ function App() {
         <HouseFilter />
         {loading && <div className="text-center py-12"><p className="text-gray-600 dark:text-gray-400">Loading houses...</p></div>}
         {error && <div className="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 p-4 rounded"><p>{error}</p></div>}
-        {!loading && !error && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {houses.map((house) => (
-              <FeaturedHouse key={house.id} house={house} />
-            ))}
-          </div>
-        )}
+        {!loading && !error && <FeaturedHouse />}
       </main>
     </div>
   )

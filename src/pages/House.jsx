@@ -1,9 +1,9 @@
 import { Link, useParams } from 'react-router-dom'
-import { useHouse } from '../features/houses/hooks/useHouse'
+import { useHouseContext } from '../features/houses/context/houseContext.jsx'
 
 const House = () => {
     const { id } = useParams()
-    const { houses, loading, error } = useHouse()
+    const { houses, loading, error } = useHouseContext()
     const selectedHouse = houses.find((item) => String(item.id) === id)
 
     if (loading) {
