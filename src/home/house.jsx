@@ -1,6 +1,11 @@
 const House = ({ house }) => {
+    const goToDetail = () => {
+        window.location.href = `/house/${house.id}`;
+    };
+    
     return (   
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+            onClick={goToDetail}>
             <img src={`/images/${house.image}`} alt={house.name} className="w-full h-48 object-cover" />
             <div className="p-4">
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{house.name}</h2>
