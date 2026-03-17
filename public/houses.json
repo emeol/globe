@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "House 1",
+        "location": "Location 1",
+        "price": 100000,
+        "image": "house.1avif"
+    },
+    {
+        "id": 2,
+        "name": "House 2",
+        "location": "Location 2",
+        "price": 150000,
+        "image": "house2.avif"
+    },
+    {
+        "id": 3,
+        "name": "House 3",
+        "location": "Location 3",
+        "price": 200000,
+        "image": "house3.avif"
+    },
+    {
+        "id": 4,
+        "name": "House 4",
+        "location": "Location 4",
+        "price": 150000,
+        "image": "house4.avif"
+    },
+    {
+        "id": 5,
+        "name": "House 5",
+        "location": "Location 5",
+        "price": 200000,
+        "image": "house5.avif"
+    }
+]
