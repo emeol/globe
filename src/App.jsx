@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import FeaturedHouse from './home/featured-house';
-import HouseFilter from './home/house-filter';
-import { useHouse } from './hooks/useHouse';
+import FeaturedHouse from './features/houses/components/FeaturedHouse';
+import HouseFilter from './features/houses/components/HouseFilter';
+import { useHouse } from './features/houses/hooks/useHouse';
 
 function App() {
 
